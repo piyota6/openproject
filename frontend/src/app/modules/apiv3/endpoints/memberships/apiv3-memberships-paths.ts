@@ -26,22 +26,22 @@
 // See docs/COPYRIGHT.rdoc for more details.
 //++
 
-import {APIv3GettableResource, APIv3ResourceCollection} from "core-app/modules/apiv3/paths/apiv3-resource";
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {Apiv3AvailableProjectsPaths} from "core-app/modules/apiv3/endpoints/projects/apiv3-available-projects-paths";
+import { APIv3GettableResource, APIv3ResourceCollection } from "core-app/modules/apiv3/paths/apiv3-resource";
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { Apiv3AvailableProjectsPaths } from "core-app/modules/apiv3/endpoints/projects/apiv3-available-projects-paths";
 import {
   Apiv3ListParameters,
   Apiv3ListResourceInterface, listParamsString
 } from "core-app/modules/apiv3/paths/apiv3-list-resource.interface";
-import {Observable} from "rxjs";
-import {HalResource} from "core-app/modules/hal/resources/hal-resource";
-import {CollectionResource} from "core-app/modules/hal/resources/collection-resource";
-import {MembershipResource} from "core-app/modules/hal/resources/membership-resource";
-import {ProjectResource} from 'core-app/modules/hal/resources/project-resource';
-import {UserResource} from "core-app/modules/hal/resources/user-resource";
-import {GroupResource} from "core-app/modules/hal/resources/group-resource";
-import {PlaceholderUserResource} from "core-app/modules/hal/resources/placeholder-user-resource";
-import {RoleResource} from 'core-app/modules/hal/resources/role-resource';
+import { Observable } from "rxjs";
+import { HalResource } from "core-app/modules/hal/resources/hal-resource";
+import { CollectionResource } from "core-app/modules/hal/resources/collection-resource";
+import { MembershipResource } from "core-app/modules/hal/resources/membership-resource";
+import { ProjectResource } from 'core-app/modules/hal/resources/project-resource';
+import { UserResource } from "core-app/modules/hal/resources/user-resource";
+import { GroupResource } from "core-app/modules/hal/resources/group-resource";
+import { PlaceholderUserResource } from "core-app/modules/hal/resources/placeholder-user-resource";
+import { RoleResource } from 'core-app/modules/hal/resources/role-resource';
 
 
 export class Apiv3MembershipsPaths

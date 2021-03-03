@@ -1,13 +1,13 @@
-import {AbstractWidgetComponent} from "core-app/modules/grids/widgets/abstract-widget.component";
-import {Component, OnInit, ChangeDetectorRef, Injector, ChangeDetectionStrategy} from '@angular/core';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {PathHelperService} from "core-app/modules/common/path-helper/path-helper.service";
-import {UserResource} from "core-app/modules/hal/resources/user-resource";
-import {CurrentProjectService} from "core-components/projects/current-project.service";
-import {MembershipResource} from "core-app/modules/hal/resources/membership-resource";
-import {RoleResource} from "core-app/modules/hal/resources/role-resource";
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {Apiv3ListParameters} from "core-app/modules/apiv3/paths/apiv3-list-resource.interface";
+import { AbstractWidgetComponent } from "core-app/modules/grids/widgets/abstract-widget.component";
+import { Component, OnInit, ChangeDetectorRef, Injector, ChangeDetectionStrategy } from '@angular/core';
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { PathHelperService } from "core-app/modules/common/path-helper/path-helper.service";
+import { UserResource } from "core-app/modules/hal/resources/user-resource";
+import { CurrentProjectService } from "core-components/projects/current-project.service";
+import { MembershipResource } from "core-app/modules/hal/resources/membership-resource";
+import { RoleResource } from "core-app/modules/hal/resources/role-resource";
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { Apiv3ListParameters } from "core-app/modules/apiv3/paths/apiv3-list-resource.interface";
 
 const DISPLAYED_MEMBERS_LIMIT = 100;
 
@@ -26,7 +26,7 @@ export class WidgetMembersComponent extends AbstractWidgetComponent implements O
   public totalMembers:number;
   public entriesByRoles:{[roleId:string]:{role:RoleResource, users:UserResource[]}} = {};
   private entriesLoaded = false;
-  public membersAddable:boolean = false;
+  public membersAddable = false;
 
   constructor(readonly pathHelper:PathHelperService,
               readonly apiV3Service:APIV3Service,
@@ -74,9 +74,9 @@ export class WidgetMembersComponent extends AbstractWidgetComponent implements O
 
   public get moreMembersText() {
     return I18n.t(
-        'js.grid.widgets.members.too_many',
-        { count: DISPLAYED_MEMBERS_LIMIT, total: this.totalMembers }
-      );
+      'js.grid.widgets.members.too_many',
+      { count: DISPLAYED_MEMBERS_LIMIT, total: this.totalMembers }
+    );
   }
 
   public get projectMembershipsPath() {
@@ -108,7 +108,7 @@ export class WidgetMembersComponent extends AbstractWidgetComponent implements O
   }
 
   private get listMembersParams() {
-    let params:Apiv3ListParameters = { sortBy: [['created_at', 'desc']], pageSize: DISPLAYED_MEMBERS_LIMIT };
+    const params:Apiv3ListParameters = { sortBy: [['created_at', 'desc']], pageSize: DISPLAYED_MEMBERS_LIMIT };
 
     if (this.currentProject.id) {
       params['filters'] = [['project_id', '=', [this.currentProject.id]]];
@@ -120,7 +120,7 @@ export class WidgetMembersComponent extends AbstractWidgetComponent implements O
   private get listAvailableProjectsParams() {
     // It would make sense to set the pageSize but the backend for projects
     // returns an upaginated list which does not support that.
-    let params:Apiv3ListParameters = {};
+    const params:Apiv3ListParameters = {};
 
     if (this.currentProject.id) {
       params['filters'] = [['id', '=', [this.currentProject.id]]];

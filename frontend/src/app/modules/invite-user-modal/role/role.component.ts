@@ -10,9 +10,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {PrincipalType} from '../invite-user.component';
-import {RoleResource} from "core-app/modules/hal/resources/role-resource";
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { PrincipalType } from '../invite-user.component';
+import { RoleResource } from "core-app/modules/hal/resources/role-resource";
 
 @Component({
   selector: 'op-ium-role',
@@ -49,7 +49,9 @@ export class RoleComponent implements OnInit {
     role: new FormControl(null, [ Validators.required ]),
   });
 
-  get roleControl() { return this.roleForm.get('role'); }
+  get roleControl() {
+    return this.roleForm.get('role');
+  }
 
   constructor(readonly I18n:I18nService) {}
 

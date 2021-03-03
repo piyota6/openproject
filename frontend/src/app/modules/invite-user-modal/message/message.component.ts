@@ -10,8 +10,8 @@ import {
   FormControl,
   FormGroup,
 } from '@angular/forms';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {PrincipalType} from '../invite-user.component';
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { PrincipalType } from '../invite-user.component';
 
 @Component({
   selector: 'op-ium-message',
@@ -22,7 +22,7 @@ export class MessageComponent implements OnInit {
   @Input() type:PrincipalType;
   @Input() project:any = null;
   @Input() principal:any = null;
-  @Input() message:string = '';
+  @Input() message = '';
 
   @Output() close = new EventEmitter<void>();
   @Output() back = new EventEmitter<void>();
@@ -45,7 +45,9 @@ export class MessageComponent implements OnInit {
     message: new FormControl(''),
   });
 
-  get messageControl() { return this.messageForm.get('message'); }
+  get messageControl() {
+    return this.messageForm.get('message');
+  }
 
   constructor(
     readonly I18n:I18nService,

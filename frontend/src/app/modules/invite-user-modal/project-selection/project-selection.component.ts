@@ -11,8 +11,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {PrincipalType} from '../invite-user.component';
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { PrincipalType } from '../invite-user.component';
 
 @Component({
   selector: 'op-ium-project-selection',
@@ -60,8 +60,12 @@ export class ProjectSelectionComponent implements OnInit {
     project: new FormControl(null, [ Validators.required ]),
   });
 
-  get typeControl() { return this.projectAndTypeForm.get('type'); }
-  get projectControl() { return this.projectAndTypeForm.get('project'); }
+  get typeControl() {
+    return this.projectAndTypeForm.get('type');
+  }
+  get projectControl() {
+    return this.projectAndTypeForm.get('project');
+  }
 
   constructor(
     readonly I18n:I18nService,

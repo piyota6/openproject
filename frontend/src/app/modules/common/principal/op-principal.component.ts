@@ -26,26 +26,26 @@
 // See docs/COPYRIGHT.rdoc for more details.
 //++
 
-import {Component, ElementRef, Input, OnInit} from '@angular/core';
-import {I18nService} from 'core-app/modules/common/i18n/i18n.service';
-import {PathHelperService} from 'core-app/modules/common/path-helper/path-helper.service';
-import {TimezoneService} from 'core-components/datetime/timezone.service';
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {PrincipalHelper} from "core-app/modules/common/principal/principal-helper";
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { I18nService } from 'core-app/modules/common/i18n/i18n.service';
+import { PathHelperService } from 'core-app/modules/common/path-helper/path-helper.service';
+import { TimezoneService } from 'core-components/datetime/timezone.service';
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { PrincipalHelper } from "core-app/modules/common/principal/principal-helper";
 import PrincipalPluralType = PrincipalHelper.PrincipalPluralType;
-import {PrincipalLike, PrincipalRendererService} from "core-app/modules/common/principal/principal-renderer.service";
+import { PrincipalLike, PrincipalRendererService } from "core-app/modules/common/principal/principal-renderer.service";
 
 @Component({
   template: '',
   selector: 'op-principal',
-  host: {'class': 'op-principal'}
+  host: { 'class': 'op-principal' }
 })
 export class OpPrincipalComponent implements OnInit {
   /** If coming from angular, pass a principal resource if available */
   @Input() principal:PrincipalLike;
-  @Input() renderAvatar:boolean = true;
-  @Input() renderName:boolean = true;
-  @Input() avatarClasses:string = '';
+  @Input() renderAvatar = true;
+  @Input() renderName = true;
+  @Input() avatarClasses = '';
 
   public constructor(readonly elementRef:ElementRef,
                      readonly PathHelper:PathHelperService,
@@ -84,6 +84,6 @@ export class OpPrincipalComponent implements OnInit {
       id: id,
       name: element.dataset.principalName!,
       href: href
-    }
+    };
   }
 }

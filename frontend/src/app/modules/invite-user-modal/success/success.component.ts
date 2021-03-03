@@ -5,8 +5,8 @@ import {
   Output,
   ElementRef,
 } from '@angular/core';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {PrincipalType} from '../invite-user.component';
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { PrincipalType } from '../invite-user.component';
 
 @Component({
   selector: 'op-ium-success',

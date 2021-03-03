@@ -14,7 +14,7 @@ export const formControlBinding:any = {
   useExisting: forwardRef(() => OpFormBindingDirective)
 };
 
-@Directive({selector: '[opFormBinding]', providers: [formControlBinding], exportAs: 'ngForm'})
+@Directive({ selector: '[opFormBinding]', providers: [formControlBinding], exportAs: 'ngForm' })
 export class OpFormBindingDirective extends NgControl {
   @Input('opFormBinding') form!:FormControl|FormGroup;
 

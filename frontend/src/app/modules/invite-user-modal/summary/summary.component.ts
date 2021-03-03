@@ -5,10 +5,10 @@ import {
   Output,
   ElementRef,
 } from '@angular/core';
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {PrincipalType} from '../invite-user.component';
-import {RoleResource} from "core-app/modules/hal/resources/role-resource";
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { PrincipalType } from '../invite-user.component';
+import { RoleResource } from "core-app/modules/hal/resources/role-resource";
 
 @Component({
   selector: 'op-ium-summary',
@@ -20,7 +20,7 @@ export class SummaryComponent {
   @Input() project:any = null;
   @Input() role:RoleResource;
   @Input() principal:any = null;
-  @Input() message:string = '';
+  @Input() message = '';
 
   @Output() close = new EventEmitter<void>();
   @Output() back = new EventEmitter<void>();
@@ -61,14 +61,14 @@ export class SummaryComponent {
       }
 
       switch (this.type) {
-        case PrincipalType.User:
-          return this.api.users.post({
-            email: this.principal.name,
-            firstName: this.principal.email,
-            status: 'invited',
-          });
-        case PrincipalType.Placeholder:
-          return this.api.placeholder_users.post({ name: this.principal.name });
+      case PrincipalType.User:
+        return this.api.users.post({
+          email: this.principal.name,
+          firstName: this.principal.email,
+          status: 'invited',
+        });
+      case PrincipalType.Placeholder:
+        return this.api.placeholder_users.post({ name: this.principal.name });
       }
     })();
 

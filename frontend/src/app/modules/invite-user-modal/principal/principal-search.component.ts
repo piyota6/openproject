@@ -6,14 +6,14 @@ import {
   Output,
   ElementRef,
 } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {Observable, BehaviorSubject, combineLatest, forkJoin} from "rxjs";
-import {debounceTime, distinctUntilChanged, first, shareReplay, map, switchMap} from "rxjs/operators";
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {ApiV3FilterBuilder} from "core-components/api/api-v3/api-v3-filter-builder";
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
-import {UntilDestroyedMixin} from "core-app/helpers/angular/until-destroyed.mixin";
-import {PrincipalType} from '../invite-user.component';
+import { FormControl } from "@angular/forms";
+import { Observable, BehaviorSubject, combineLatest, forkJoin } from "rxjs";
+import { debounceTime, distinctUntilChanged, first, shareReplay, map, switchMap } from "rxjs/operators";
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { ApiV3FilterBuilder } from "core-components/api/api-v3/api-v3-filter-builder";
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
+import { UntilDestroyedMixin } from "core-app/helpers/angular/until-destroyed.mixin";
+import { PrincipalType } from '../invite-user.component';
 
 @Component({
   selector: 'op-ium-principal-search',

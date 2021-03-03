@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {PathHelperService} from "core-app/modules/common/path-helper/path-helper.service";
-import {ColorsService} from "core-app/modules/common/colors/colors.service";
-import {APIV3Service} from "core-app/modules/apiv3/api-v3.service";
-import {PrincipalHelper} from "core-app/modules/common/principal/principal-helper";
+import { Injectable } from "@angular/core";
+import { PathHelperService } from "core-app/modules/common/path-helper/path-helper.service";
+import { ColorsService } from "core-app/modules/common/colors/colors.service";
+import { APIV3Service } from "core-app/modules/apiv3/api-v3.service";
+import { PrincipalHelper } from "core-app/modules/common/principal/principal-helper";
 import PrincipalType = PrincipalHelper.PrincipalType;
 
 export interface PrincipalLike {
@@ -24,9 +24,9 @@ export class PrincipalRendererService {
   }
 
   renderMultiple(container:HTMLElement,
-                 users:PrincipalLike[],
-                 renderName:boolean = true,
-                 multiLine:boolean = false) {
+    users:PrincipalLike[],
+    renderName = true,
+    multiLine = false) {
 
     const span = document.createElement('span');
 
@@ -52,9 +52,9 @@ export class PrincipalRendererService {
   }
 
   render(container:HTMLElement,
-         principal:PrincipalLike,
-         name:boolean = true,
-         avatar:false|AvatarOptions = { classes: 'avatar-medium' }):void {
+    principal:PrincipalLike,
+    name = true,
+    avatar:false|AvatarOptions = { classes: 'avatar-medium' }):void {
 
     const type = PrincipalHelper.typeFromHref(principal.href)!;
 
@@ -73,7 +73,7 @@ export class PrincipalRendererService {
     const userInitials = this.getInitials(principal.name);
     const colorCode = this.colors.toHsl(principal.name);
 
-    let fallback = document.createElement('div');
+    const fallback = document.createElement('div');
     fallback.className = avatar.classes;
     fallback.classList.add('avatar-default');
     fallback.textContent = userInitials;
@@ -111,20 +111,20 @@ export class PrincipalRendererService {
 
   private principalURL(principal:PrincipalLike, type:PrincipalType) {
     switch (type) {
-      case 'group':
-        return this.pathHelper.groupPath(principal.id);
-      case 'placeholder_user':
-        return this.pathHelper.placeholderUserPath(principal.id);
-      case 'user':
-        return this.pathHelper.userPath(principal.id);
+    case 'group':
+      return this.pathHelper.groupPath(principal.id);
+    case 'placeholder_user':
+      return this.pathHelper.placeholderUserPath(principal.id);
+    case 'user':
+      return this.pathHelper.userPath(principal.id);
     }
   }
 
   private getInitials(name:string) {
-    let characters = [...name];
-    let lastSpace = name.lastIndexOf(' ');
-    let first = characters[0]?.toUpperCase();
-    let last = name[lastSpace + 1]?.toUpperCase();
+    const characters = [...name];
+    const lastSpace = name.lastIndexOf(' ');
+    const first = characters[0]?.toUpperCase();
+    const last = name[lastSpace + 1]?.toUpperCase();
 
     return [first, last].join("");
   }

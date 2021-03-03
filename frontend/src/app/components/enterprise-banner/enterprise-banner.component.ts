@@ -1,6 +1,6 @@
-import {Component, Input} from "@angular/core";
-import {enterpriseEditionUrl} from "core-app/globals/constants.const";
-import {I18nService} from "core-app/modules/common/i18n/i18n.service";
+import { Component, Input } from "@angular/core";
+import { enterpriseEditionUrl } from "core-app/globals/constants.const";
+import { I18nService } from "core-app/modules/common/i18n/i18n.service";
 
 @Component({
   selector: 'enterprise-banner',
@@ -19,7 +19,7 @@ import {I18nService} from "core-app/modules/common/i18n/i18n.service";
   `
 })
 export class EnterpriseBannerComponent {
-  @Input() public leftMargin:boolean = false;
+  @Input() public leftMargin = false;
   @Input() public textMessage:string;
   @Input() public linkMessage:string;
   @Input() public opReferrer:string;
